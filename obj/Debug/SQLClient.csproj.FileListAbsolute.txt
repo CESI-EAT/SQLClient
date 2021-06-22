@@ -1,0 +1,15 @@
+C:\Users\Benja\Dev\Cesi\SQLClient\bin\Debug\SQLClient.exe.config
+C:\Users\Benja\Dev\Cesi\SQLClient\bin\Debug\SQLClient.exe
+C:\Users\Benja\Dev\Cesi\SQLClient\bin\Debug\SQLClient.pdb
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient.csprojAssemblyReference.cache
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\MainWindow.g.cs
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\App.g.cs
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient_MarkupCompile.cache
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient_MarkupCompile.lref
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\MainWindow.baml
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient.g.resources
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient.Properties.Resources.resources
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient.csproj.GenerateResource.cache
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient.csproj.CoreCompileInputs.cache
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient.exe
+C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\SQLClient.pdb

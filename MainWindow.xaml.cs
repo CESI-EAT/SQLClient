@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLClient.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,22 @@ namespace SQLClient
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DAO dao;
+
         public MainWindow()
         {
             InitializeComponent();
+            this.dao = new DAO(this);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            dao.SendInsert("LarryGuy");
+        }
+
+        public void UpdateTextBox(string text)
+        {
+            txtStatus.Text = txtStatus.Text + "\n" + text;
         }
     }
 }
