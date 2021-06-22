@@ -20,7 +20,7 @@ namespace SQLClient.Database
 
         public void SendInsert(string username)
         {
-            string query = "INSERT INTO [CESIEAT.Users] ([Username])" + " Values ('" + username + "')";
+            string query = "INSERT INTO [CESIEAT].[dbo].[Users] ([Username])" + " Values ('" + username + "')";
             executeQuery(query);
         }
 
@@ -29,8 +29,7 @@ namespace SQLClient.Database
             this.mainWindow.UpdateTextBox("BEGIN EXECUTE QUERY");
             // Initialization.  
             int rowCount = 0;
-            string strConn = "Data Source=172.20.6.104;Database=CESIEAT;User Id=developper;Password=Poiuytr1234.;";
-            SqlConnection sqlConnection = new SqlConnection(strConn);
+            SqlConnection sqlConnection = new SqlConnection(this.GetConnectString());
             SqlCommand sqlCommand = new SqlCommand();
 
             try
@@ -40,7 +39,6 @@ namespace SQLClient.Database
                 sqlCommand.CommandText = query;
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.Connection = sqlConnection;
-                //sqlCommand.CommandTimeout = 10; //// Setting timeeout for longer queries to 10 seconds.  
 
                 // Open.  
                 sqlConnection.Open();
@@ -62,6 +60,45 @@ namespace SQLClient.Database
             }
 
             return rowCount;
+        }
+        public string GetConnectString() { 
+            SqlConnectionStringBuilder builder =
+                new SqlConnectionStringBuilder(GetConnectionString());
+
+            // The input connection string used the
+            // Server key, but the new connection string uses
+            // the well-known Data Source key instead.
+            Console.WriteLine(builder.ConnectionString);
+
+            // Pass the SqlConnectionStringBuilder an existing
+            // connection string, and you can retrieve and
+            // modify any of the elements.
+            builder.ConnectionString = "server=25.68.148.251;user id=sa;" +
+                "password=Poiuytr1234.;";
+
+            // Now that the connection string has been parsed,
+            // you can work with individual items.
+            Console.WriteLine(builder.Password);
+            builder.Password = "Poiuytr1234.";
+            builder.AsynchronousProcessing = true;
+
+            // You can refer to connection keys using strings,
+            // as well. When you use this technique (the default
+            // Item property in Visual Basic, or the indexer in C#),
+            // you can specify any synonym for the connection string key
+            // name.
+            builder["Server"] = "25.68.148.251";
+            builder["Connect Timeout"] = 1000;
+            builder["Trusted_Connection"] = false;
+            Console.WriteLine(builder.ConnectionString);
+            return builder.ConnectionString;
+        }
+
+        private static string GetConnectionString()
+        {
+            // To avoid storing the connection string in your code,
+            // you can retrieve it from a configuration file.
+            return "Server=25.68.148.251;Integrated Security=SSPI;";
         }
     }
 }
