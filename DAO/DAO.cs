@@ -100,7 +100,7 @@ namespace SQLClient.Database
             {
                 //this.mainWindow.UpdateTextBox("TRY CONNECT");
                 // Settings.  
-                sqlCommand.CommandText = "SELECT [Logs].[Id],[Logs].[User],[Users].[Firstname],[Users].[Lastname],[Logs].[Timestamp],[Logs].[type] FROM[CESIEAT].[dbo].[Logs] LEFT JOIN[CESIEAT].[dbo].[Users] ON [Logs].[User] = [Users].[Id]";
+                sqlCommand.CommandText = "SELECT [Logs].[Id],[Logs].[User_id],[Users].[Firstname],[Users].[Lastname],[Logs].[Created_at],[Logs].[Type] FROM [CESIEAT].[dbo].[Logs] LEFT JOIN[CESIEAT].[dbo].[Users] ON [Logs].[User_id] = [Users].[Id]";
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.Connection = sqlConnection;
 
@@ -117,10 +117,10 @@ namespace SQLClient.Database
                         Log log = new Log();
                         log.Id = (int)reader["Id"];
                         log.User = new User();
-                        log.User.Id = (int)reader["User"];
+                        log.User.Id = (int)reader["User_id"];
                         log.User.LastName = reader["FirstName"].ToString();
                         log.User.FirstName = reader["LastName"].ToString();
-                        log.TimeStamp = (DateTime)reader["TimeStamp"];
+                        log.TimeStamp = (DateTime)reader["Created_at"];
                         log.type = reader["Type"].ToString();
                         logs.Add(log);
                     }

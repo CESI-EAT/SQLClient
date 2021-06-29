@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SQLClient"
       mc:Ignorable="d" 
-      Title="Cesieat" Height="800" Width="800">
+      Title="Cesieat" Height="900" Width="900">
 
     <Grid>
         <Frame Name="ContentPage" NavigationUIVisibility="Hidden"/>

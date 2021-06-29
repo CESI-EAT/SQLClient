@@ -25,26 +25,6 @@ namespace SQLClient
         {
             InitializeComponent();
 
-            users.Add(new Database.User
-            {
-                Id = 1,
-                FirstName = "test1",
-                LastName = "tset1",
-                Address = "404 test street",
-                PhoneNum = "0654321987",
-                Role = "Consommateur",
-            });
-            
-            users.Add(new Database.User
-            {
-                Id = 2,
-                FirstName = "test2",
-                LastName = "tset2",
-                Address = "405 test street",
-                PhoneNum = "0654321987",
-                Role = "Consommateur",
-            });
-            
             uList.ItemsSource = Database.DAO.GetUserList(SQLClient.Cesieat.Instance.connectionString);
                         
         }
@@ -54,12 +34,23 @@ namespace SQLClient
             var user = sender as ListViewItem;
             if (user != null)
             {
-                //SQLClient.Cesieat.Instance.setTargetteUser(user.Tag.);
-
+                SQLClient.Cesieat.Instance.user = (Database.User)user.DataContext;
                 if (SQLClient.Cesieat.Instance.userType == "technique")
-                //SQLClient.Cesieat.Instance.updateFrame("UserEdit.xaml");
-                SQLClient.Cesieat.Instance.updateFrame("UserLog.xaml");
+                {
+                    SQLClient.Cesieat.Instance.updateFrame("UserLog.xaml");
+                } else if(SQLClient.Cesieat.Instance.userType == "commercial")
+                {
+                    SQLClient.Cesieat.Instance.updateFrame("UserEdit.xaml");
+                } else
+                {
+                    SQLClient.Cesieat.Instance.updateFrame("Connexion.xaml");
+                }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SQLClient.Cesieat.Instance.updateFrame("Connexion.xaml");
         }
     }
 }

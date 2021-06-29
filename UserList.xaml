@@ -8,7 +8,7 @@
       Title="UserList" Height="800" Width="780">
 
     <Grid>
-        <ListView Name ="uList" Margin="10" Width="750">
+        <ListView Name ="uList" Margin="10" Width="750" Height="750">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Id}" />
@@ -25,5 +25,6 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
+        <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="12" Width="120" Click="Button_Click"/>
     </Grid>
 </Page>

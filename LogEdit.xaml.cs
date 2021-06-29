@@ -16,26 +16,26 @@ using System.Windows.Shapes;
 namespace SQLClient
 {
     /// <summary>
-    /// Interaction logic for UserEdit.xaml
+    /// Interaction logic for LogEdit.xaml
     /// </summary>
-    public partial class UserEdit : Page
+    public partial class LogEdit : Page
     {
-        Database.User user = new Database.User();
+        Database.Log log = new Database.Log();
 
-        public UserEdit()
+        public LogEdit()
         {
             InitializeComponent();
-            user = SQLClient.Cesieat.Instance.user;
-            id.Text = user.Id.ToString();
-            fName.Text = user.FirstName.ToString();
-            lName.Text = user.LastName.ToString();
-            address.Text = user.Address.ToString();
-            pNum.Text = user.PhoneNum.ToString();
-            role.Text = user.Role.ToString();
+            log = SQLClient.Cesieat.Instance.log;
+            id.Text = log.Id.ToString();
+            fName.Text = log.User.FirstName.ToString();
+            lName.Text = log.User.LastName.ToString();
+            tStamp.Text = log.TimeStamp.ToString();
+            type.Text = log.type.ToString();
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SQLClient.Cesieat.Instance.updateFrame("UserList.xaml");
+            SQLClient.Cesieat.Instance.updateFrame("UserLog.xaml");
         }
     }
 }

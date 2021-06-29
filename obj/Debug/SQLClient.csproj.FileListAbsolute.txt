@@ -49,3 +49,5 @@ C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\bin\Debug\System.Memo
 C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\obj\Debug\SQLClient.csproj.CopyComplete
+C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\obj\Debug\LogEdit.g.cs
+C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\obj\Debug\LogEdit.baml

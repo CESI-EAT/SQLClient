@@ -22,6 +22,8 @@ namespace SQLClient
     {
         public string connectionString { get; set; }
         public string userType { get; set; }
+        public Database.User user { get; set; }
+        public Database.Log log { get; set; }
 
         public static Cesieat Instance { get; private set; }
 

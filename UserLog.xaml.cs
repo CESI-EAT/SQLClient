@@ -26,9 +26,25 @@ namespace SQLClient
         public UserLog()
         {
             InitializeComponent();
-            logs = Database.DAO.GetLogList(SQLClient.Cesieat.Instance.connectionString);
+            logs = Database.DAO.GetLogList(SQLClient.Cesieat.Instance.connectionString).FindAll(u => u.Id == SQLClient.Cesieat.Instance.user.Id);
             lList.ItemsSource = logs;
-            
+
+        }
+
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var log = sender as ListViewItem;
+            if (log != null)
+            {
+                SQLClient.Cesieat.Instance.log = (Database.Log)log.DataContext;
+
+                SQLClient.Cesieat.Instance.updateFrame("LogEdit.xaml");
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SQLClient.Cesieat.Instance.updateFrame("UserList.xaml");
         }
     }
 }
