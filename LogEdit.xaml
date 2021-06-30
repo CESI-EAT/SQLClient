@@ -11,26 +11,29 @@
     <Grid>
         <StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="id" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="250" />
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Name="id" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="250"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Firstname" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="fName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Firstname" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="fName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25" >
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Lastname" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="lName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Lastname" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="lName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TimeStamp" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="tStamp" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Created at" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="tStamp" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" />
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Name="tWarning" MaxHeight="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="type" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="type" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="type" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
         </StackPanel>
+        <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="88" Width="120" Click="Save_Click" Visibility="Visible"/>
+        <Button Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="50" Width="120" Click="Delete_Click"/>
         <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="12" Width="120" Click="Button_Click"/>
     </Grid>
 </Page>

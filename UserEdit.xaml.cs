@@ -31,10 +31,45 @@ namespace SQLClient
             lName.Text = user.LastName.ToString();
             address.Text = user.Address.ToString();
             pNum.Text = user.PhoneNum.ToString();
-            role.Text = user.Role.ToString();
+            role.Text = user.Role.Name.ToString();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            SQLClient.Cesieat.Instance.updateFrame("UserList.xaml");
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            Database.User userSaved = user;
+            userSaved.FirstName = fName.Text;
+            userSaved.LastName = lName.Text;
+            userSaved.Address = address.Text;
+            userSaved.PhoneNum = pNum.Text;
+            userSaved.Role = Database.DAO.GetRoleByName(SQLClient.Cesieat.Instance.connectionString, role.Text);
+
+            Database.DAO.updateUser(user, SQLClient.Cesieat.Instance.connectionString);
+
+            user = userSaved;
+
+            id.Text = user.Id.ToString();
+            fName.Text = user.FirstName.ToString();
+            lName.Text = user.LastName.ToString();
+            address.Text = user.Address.ToString();
+            pNum.Text = user.PhoneNum.ToString();
+            role.Text = user.Role.Name.ToString();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            /*Database.User userSaved = user;
+            userSaved.FirstName = fName.Text;
+            userSaved.LastName = lName.Text;
+            userSaved.Address = address.Text;
+            userSaved.PhoneNum = pNum.Text;
+            userSaved.Role = Database.DAO.GetRoleByName(SQLClient.Cesieat.Instance.connectionString, role.Text);*/
+
+            Database.DAO.deleteUser(user, SQLClient.Cesieat.Instance.connectionString);
+
             SQLClient.Cesieat.Instance.updateFrame("UserList.xaml");
         }
     }

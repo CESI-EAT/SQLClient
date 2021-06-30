@@ -26,7 +26,13 @@ namespace SQLClient
         public UserLog()
         {
             InitializeComponent();
-            logs = Database.DAO.GetLogList(SQLClient.Cesieat.Instance.connectionString).FindAll(u => u.Id == SQLClient.Cesieat.Instance.user.Id);
+            
+            foreach (Database.Log log in Database.DAO.GetLogList(SQLClient.Cesieat.Instance.connectionString)){
+                if (log.User.Id == SQLClient.Cesieat.Instance.user.Id)
+                {
+                    logs.Add(log);
+                }
+            }
             lList.ItemsSource = logs;
 
         }

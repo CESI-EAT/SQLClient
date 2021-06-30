@@ -47,7 +47,7 @@ namespace SQLClient
                 SQLClient.Cesieat.Instance.updateFrame("UserList.xaml");
             } else
             {
-                PFalse.Text = "Wrong";
+                PFalse.Text = "Wrong id or password";
             }
             
         }

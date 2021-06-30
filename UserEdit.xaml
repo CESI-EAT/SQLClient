@@ -10,30 +10,32 @@
     <Grid>
         <StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="id" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="250" />
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Name="id" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="250"/>
             </StackPanel> 
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Firstname" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="fName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Firstname" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="fName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25" >
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Lastname" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="lName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Lastname" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="lName" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="address" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="address" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="PhoneNum" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="pNum" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="PhoneNum" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="pNum" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0,25">
-                <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Role" VerticalAlignment="Top" Width="120" />
-                <TextBox HorizontalAlignment="Left" Name="role" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="23" TextWrapping="Wrap" Text="Role" VerticalAlignment="Top" Width="250" />
+                <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="role" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
         </StackPanel>
+        <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="88" Width="120" Click="Save_Click" Visibility="Visible"/>
+        <Button Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="50" Width="120" Click="Delete_Click"/>
         <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="12" Width="120" Click="Button_Click"/>
     </Grid>
 </Page>

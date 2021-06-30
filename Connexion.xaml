@@ -18,7 +18,7 @@
             </StackPanel>
             <StackPanel>
                 <Button Content="Se connecter" HorizontalAlignment="Center" Height="25" Margin="0,25,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
-                <TextBlock x:Name="PFalse" HorizontalAlignment="Center" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="12"/>
+                <TextBlock x:Name="PFalse" HorizontalAlignment="Center" TextAlignment="Center" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
         </StackPanel>
         <Image x:Name="CESIEAT_Logo" HorizontalAlignment="Left" Height="234" VerticalAlignment="Top" Width="228" Margin="59,68,0,0" Source="cesieat.png" RenderTransformOrigin="0.5,0.5">

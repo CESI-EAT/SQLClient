@@ -45,7 +45,7 @@ namespace SQLClient.Database
             {
                 //this.mainWindow.UpdateTextBox("TRY CONNECT");
                 // Settings.  
-                sqlCommand.CommandText = "SELECT[Users].[Id],[Users].[Firstname],[Users].[Lastname],[Users].[Address],[Users].[PhoneNum],[Roles].[Name],[Users].[Password],[Users].[Email] FROM [CESIEAT].[dbo].[Users] LEFT JOIN[CESIEAT].[dbo].[Roles] ON [Users].[Role_id] = [Roles].[Id]";
+                sqlCommand.CommandText = "SELECT [Id],[Firstname],[Lastname],[Address],[PhoneNum],[Role_id],[Password],[Email]FROM[CESIEAT].[dbo].[Users]";
                 sqlCommand.CommandType = CommandType.Text;
                 sqlCommand.Connection = sqlConnection;
 
@@ -65,7 +65,7 @@ namespace SQLClient.Database
                         user.LastName = reader["LastName"].ToString();
                         user.Address = reader["Address"].ToString();
                         user.PhoneNum = reader["PhoneNum"].ToString();
-                        user.Role = reader["Name"].ToString();
+                        user.Role = GetRoleById(connectionString,(int)reader["Role_id"]);
                         user.Password = reader["Password"].ToString();
                         user.Email = reader["Email"].ToString();
                         users.Add(user);
@@ -86,6 +86,100 @@ namespace SQLClient.Database
             }
 
             return users;
+        }
+
+        public static Role GetRoleById(string connectionString, int id)
+        {
+            //this.mainWindow.UpdateTextBox("BEGIN EXECUTE QUERY");
+            // Initialization. 
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            Role role = new Role();
+
+            try
+            {
+                //this.mainWindow.UpdateTextBox("TRY CONNECT");
+                // Settings.  
+                sqlCommand.CommandText = "SELECT [Name] FROM [CESIEAT].[dbo].[Roles] WHERE [Id] = '" + id + "'";
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Connection = sqlConnection;
+
+                // Open.  
+                sqlConnection.Open();
+
+                // Result.  
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                //rowCount = sqlCommand.ExecuteNonQuery();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        role.Id = id;
+                        role.Name = reader["Name"].ToString();
+                    }
+                }
+
+                // Close.  
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                //this.mainWindow.UpdateTextBox("CATCH CONNECT");
+
+                // Close.  
+                sqlConnection.Close();
+
+                throw ex;
+            }
+
+            return role;
+        }
+
+        public static Role GetRoleByName(string connectionString, string name)
+        {
+            //this.mainWindow.UpdateTextBox("BEGIN EXECUTE QUERY");
+            // Initialization. 
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+            Role role = new Role();
+
+            try
+            {
+                //this.mainWindow.UpdateTextBox("TRY CONNECT");
+                // Settings.  
+                sqlCommand.CommandText = "SELECT [Id] FROM [CESIEAT].[dbo].[Roles] WHERE [Name] = '" + name + "'";
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Connection = sqlConnection;
+
+                // Open.  
+                sqlConnection.Open();
+
+                // Result.  
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                //rowCount = sqlCommand.ExecuteNonQuery();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        role.Name = name;
+                        role.Id = (int)reader["Id"];
+                    }
+                }
+
+                // Close.  
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                //this.mainWindow.UpdateTextBox("CATCH CONNECT");
+
+                // Close.  
+                sqlConnection.Close();
+
+                throw ex;
+            }
+
+            return role;
         }
 
         public static List<Log> GetLogList(string connectionString)
@@ -140,6 +234,143 @@ namespace SQLClient.Database
             }
 
             return logs;
+        }
+
+        public static void updateUser(User user, string connectionString)
+        {
+            //this.mainWindow.UpdateTextBox("BEGIN EXECUTE QUERY");
+            // Initialization. 
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+
+            try
+            {
+                //this.mainWindow.UpdateTextBox("TRY CONNECT");
+                // Settings.  
+                sqlCommand.CommandText = "UPDATE [CESIEAT].[dbo].[Users] SET [Firstname] = '" + user.FirstName + "',[Lastname] = '" + user.LastName + "',[Address] = '" + user.Address + "',[PhoneNum] = '" + user.PhoneNum + "',[Role_id] = '" + user.Role.Id + "',[Email] = '" + user.Email + "' WHERE Id = '" + user.Id + "'";
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Connection = sqlConnection;
+
+                // Open.  
+                sqlConnection.Open();
+
+                // Result.  
+                sqlCommand.ExecuteReader();
+                // Close.  
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                //this.mainWindow.UpdateTextBox("CATCH CONNECT");
+
+                // Close.  
+                sqlConnection.Close();
+
+                throw ex;
+            }
+        }
+
+        public static void updateLog(Log log, string connectionString)
+        {
+            //this.mainWindow.UpdateTextBox("BEGIN EXECUTE QUERY");
+            // Initialization. 
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+
+            try
+            {
+                //this.mainWindow.UpdateTextBox("TRY CONNECT");
+                // Settings.  
+                sqlCommand.CommandText = "UPDATE [CESIEAT].[dbo].[Logs] SET [User_id] = '" + log.User.Id + "',[Created_at] = '" + log.TimeStamp + "',[Type] = '" + log.type + "' WHERE Id = '" + log.Id + "'";
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Connection = sqlConnection;
+
+                // Open.  
+                sqlConnection.Open();
+
+                // Result.  
+                sqlCommand.ExecuteReader();
+                // Close.  
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                //this.mainWindow.UpdateTextBox("CATCH CONNECT");
+
+                // Close.  
+                sqlConnection.Close();
+
+                throw ex;
+            }
+        }
+        
+
+        public static void deleteUser(User user, string connectionString)
+        {
+            //this.mainWindow.UpdateTextBox("BEGIN EXECUTE QUERY");
+            // Initialization. 
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+
+            try
+            {
+                //this.mainWindow.UpdateTextBox("TRY CONNECT");
+                // Settings.  
+                sqlCommand.CommandText = "DELETE FROM [CESIEAT].[dbo].[Users] WHERE Id = '" + user.Id + "'";
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Connection = sqlConnection;
+
+                // Open.  
+                sqlConnection.Open();
+
+                // Result.  
+                sqlCommand.ExecuteReader();
+                // Close.  
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                //this.mainWindow.UpdateTextBox("CATCH CONNECT");
+
+                // Close.  
+                sqlConnection.Close();
+
+                throw ex;
+            }
+        }
+
+        public static void deleteLog(Log log, string connectionString)
+        {
+            //this.mainWindow.UpdateTextBox("BEGIN EXECUTE QUERY");
+            // Initialization. 
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            SqlCommand sqlCommand = new SqlCommand();
+
+            try
+            {
+                //this.mainWindow.UpdateTextBox("TRY CONNECT");
+                // Settings.  
+                sqlCommand.CommandText = "DELETE FROM [CESIEAT].[dbo].[Logs] WHERE Id = '" + log.Id + "'";
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Connection = sqlConnection;
+
+                // Open.  
+                sqlConnection.Open();
+
+                // Result.  
+                sqlCommand.ExecuteReader();
+                // Close.  
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                //this.mainWindow.UpdateTextBox("CATCH CONNECT");
+
+                // Close.  
+                sqlConnection.Close();
+
+                throw ex;
+            }
         }
 
         public static string GetConnectString(string userId, string password) { 

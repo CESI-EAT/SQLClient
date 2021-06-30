@@ -12,11 +12,11 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="FirstName" Width="140" DisplayMemberBinding="{Binding FirstName}" />
-                    <GridViewColumn Header="LastName" Width="140" DisplayMemberBinding="{Binding LastName}" />
-                    <GridViewColumn Header="Address" Width="220" DisplayMemberBinding="{Binding Address}" />
-                    <GridViewColumn Header="PhoneNum" Width="80" DisplayMemberBinding="{Binding PhoneNum}" />
-                    <GridViewColumn Header="Role" Width="100" DisplayMemberBinding="{Binding Role}" />
+                    <GridViewColumn Header="FirstName" Width="100" DisplayMemberBinding="{Binding FirstName}" />
+                    <GridViewColumn Header="LastName" Width="100" DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Header="Address" Width="240" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="PhoneNum" Width="100" DisplayMemberBinding="{Binding PhoneNum}" />
+                    <GridViewColumn Header="Role" Width="150" DisplayMemberBinding="{Binding Role.Name}" />
                 </GridView>
             </ListView.View>
             <ListView.ItemContainerStyle>
