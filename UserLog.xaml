@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SQLClient"
       mc:Ignorable="d" 
-      Title="UserLog" Height="800" Width="800">
+      Title="UserLog" Height="600" Width="1000">
 
     <Grid>
-        <ListView Name ="lList" Margin="10,10,10,50" Width="750" Height="750">
+        <ListView Name ="lList" Margin="53,59,197,24" Width="750" MaxHeight="450">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Id}" />
@@ -24,6 +24,6 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Margin="12" Width="120" Click="Button_Click"/>
+        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="832,0,0,491" Width="120" Click="Button_Click"/>
     </Grid>
 </Page>

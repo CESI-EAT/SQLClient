@@ -5,9 +5,39 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SQLClient"
       mc:Ignorable="d" 
-      Title="Cesieat" Height="900" Width="900">
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      Title="Cesieat" Height="600" Width="1000"
+      ResizeMode="NoResize">
 
     <Grid>
         <Frame Name="ContentPage" NavigationUIVisibility="Hidden"/>
+        <materialDesign:ColorZone Mode="PrimaryMid" Padding="16">
+            <DockPanel>
+
+                <Image Image.Source="./Images/cesieat.png" Height="44" Width="72">
+
+                </Image>
+                <Button
+                    Content="Exit"
+                    VerticalAlignment="Center"
+                    DockPanel.Dock="Right" 
+                    Click="Exit" Cursor="Hand"
+                    Foreground="White"/>
+
+                <TextBlock
+                        VerticalAlignment="Center"
+                        Text="CESI'EAT Administration Center" Foreground="White" FontWeight="Bold"
+                        
+                    />
+
+            </DockPanel>
+        </materialDesign:ColorZone>
     </Grid>
 </Window>

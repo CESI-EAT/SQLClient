@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MaterialDesignColors;
+using MaterialDesignThemes.Wpf;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace SQLClient
 {
@@ -30,6 +22,13 @@ namespace SQLClient
         static Cesieat()
         {
             Instance = new Cesieat();
+            Color primaryColor = (Color) System.Windows.Media.ColorConverter.ConvertFromString("#FF912B");
+            Color secondaryColor = (Color) System.Windows.Media.ColorConverter.ConvertFromString("#4A4A4A");
+
+            IBaseTheme baseTheme = Theme.Light;
+            ITheme theme = Theme.Create(baseTheme, primaryColor, secondaryColor);
+            var paletteHelper = new PaletteHelper();
+            paletteHelper.SetTheme(theme);
         }
 
         private Cesieat()
@@ -42,9 +41,10 @@ namespace SQLClient
         {
             ContentPage.Source = new Uri(newFrame, UriKind.Relative);
         }
-    }
 
-
-
-    
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+    }   
 }

@@ -3,33 +3,181 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SQLClient"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Connexion" Height="800" Width="800">
+        d:DesignHeight="600"
+        d:DesignWidth="1000">
     <Grid>
-        <StackPanel>
-            <StackPanel Margin="0,50,0,25">
-                <TextBlock x:Name="NText" HorizontalAlignment="Center" Height="23" Margin="0,25,0,0" TextWrapping="Wrap" Text="Type d'utilisateur" VerticalAlignment="Top" Width="120"></TextBlock>
-                <TextBox x:Name="Name" HorizontalAlignment="Center" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- example 1 -->
+        <Border
+            Background="{DynamicResource MaterialDesignSelection}">
+            <Grid>
+                <StackPanel
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="0 -100 0 0">
+                    <TextBlock
+                        TextWrapping="WrapWithOverflow"
+                        Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                        Text="Commercial links"
+                        FontWeight="Bold"/>
+                </StackPanel>
+                <Button Height="150" Width="150" Cursor="Hand"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0 50 0 0"
+                    Click="OpenWebsite">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="./Images/cesieat.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- example 2 -->
+        <Border
+            Background="{DynamicResource MaterialDesignPaper}"
+            Grid.Column="1"
+            Grid.Row="0">
+            <Grid>
+                <StackPanel
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="0 -100 0 0">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock
+                        Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                        Text="Technical links" FontWeight="Bold"
+                        />
+
+                </StackPanel>
+                <Button Height="100" Width="100" Cursor="Hand"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="45,125,0,0"
+                    Click="OpenESXI">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="./Images/vmware.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Height="100" Width="100" Cursor="Hand"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0 50 0 0"
+                    Click="OpenKubernetes">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="./Images/kubernetes.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Height="100" Width="100" Cursor="Hand"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="0,125,38,0"
+                    Click="OpenJenkins">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="./Images/jenkins.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- example 5 -->
+        <!-- full width snack bar -->
+        <Border
+            Background="{DynamicResource MaterialDesignChipBackground}"
+            Grid.ColumnSpan="2"
+            Grid.Row="1"
+            >
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock
+                        Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                        Text="Support Login" FontWeight="Bold"
+                        />
+                <StackPanel HorizontalAlignment="Center">
+                    <Grid
+                    Margin="0 40 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"
+                                       />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                            Text="Role :" FontWeight="Bold"
+                            Grid.Row="0"
+                            Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                    />
+                        <ComboBox
+                        Style="{StaticResource MaterialDesignFilledComboBox}"
+                        ItemsSource="{Binding ShortStringList}"
+                        x:Name="Name" 
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        >
+                            <ComboBoxItem>technique</ComboBoxItem>
+                            <ComboBoxItem>commercial</ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock
+                            Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                            Text="Password :" FontWeight="Bold"
+                            Grid.Row="1"
+                        Margin="0,52,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"
+                        />
+                        <PasswordBox
+                            Style="{StaticResource MaterialDesignFilledPasswordBox}"
+                            x:Name="Password"
+                            VerticalAlignment="Top"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            MinWidth="200" Cursor="IBeam"
+                        Margin="0 40 0 0"
+                            />
+                        <Button
+                            Click="Button_Click"
+                            Margin="0 90 0 0"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Content="Connect" Cursor="Hand"
+                            />
+                        <TextBlock 
+                            x:Name="PFalse" 
+                            TextAlignment="Center" 
+                            Height="23" 
+                            Text="" 
+                             Margin="0 150 0 0"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                        />
+                    </Grid>
+                </StackPanel>
             </StackPanel>
-            <StackPanel>
-                <TextBlock x:Name="PText" HorizontalAlignment="Center" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" Width="120"></TextBlock>
-                <PasswordBox x:Name="Password" PasswordChar="*" HorizontalAlignment="Center" Height="23" Margin="0,0,0,0"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.896,-1.429"/>
-            </StackPanel>
-            <StackPanel>
-                <Button Content="Se connecter" HorizontalAlignment="Center" Height="25" Margin="0,25,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
-                <TextBlock x:Name="PFalse" HorizontalAlignment="Center" TextAlignment="Center" Height="23" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"/>
-            </StackPanel>
-        </StackPanel>
-        <Image x:Name="CESIEAT_Logo" HorizontalAlignment="Left" Height="234" VerticalAlignment="Top" Width="228" Margin="59,68,0,0" Source="cesieat.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-62.937"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
+        </Border>
     </Grid>
 </Page>
