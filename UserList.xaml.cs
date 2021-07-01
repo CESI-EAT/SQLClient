@@ -24,6 +24,7 @@ namespace SQLClient
         public UserList()
         {
             InitializeComponent();
+            SQLClient.Cesieat.Instance.currentPage = "userList";
 
             uList.ItemsSource = Database.DAO.GetUserList(SQLClient.Cesieat.Instance.connectionString);
                         

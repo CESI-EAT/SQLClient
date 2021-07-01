@@ -34,8 +34,7 @@
                 <TextBox  HorizontalAlignment="Left" TextAlignment="Center" Name="role" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Cursor="IBeam"/>
             </StackPanel>
         </StackPanel>
-        <Button Content="Save" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="765,0,0,351" Width="120" Click="Save_Click" Visibility="Visible"/>
-        <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="765,0,0,313" Width="120" Click="Delete_Click"/>
-        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="765,0,0,275" Width="120" Click="Button_Click"/>
+        <Button Content="Save" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="765,0,0,282" Width="120" Click="Save_Click" Visibility="Visible"/>
+        <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="765,0,0,229" Width="120" Click="Delete_Click"/>
     </Grid>
 </Page>

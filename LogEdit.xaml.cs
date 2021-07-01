@@ -25,6 +25,8 @@ namespace SQLClient
         public LogEdit()
         {
             InitializeComponent();
+            SQLClient.Cesieat.Instance.currentPage = "logEdit";
+
             log = SQLClient.Cesieat.Instance.log;
             id.Text = log.Id.ToString();
             fName.Text = log.User.FirstName.ToString();

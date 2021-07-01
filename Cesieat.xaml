@@ -30,6 +30,14 @@
                     DockPanel.Dock="Right" 
                     Click="Exit" Cursor="Hand"
                     Foreground="White"/>
+                <Button
+                    Content="Back"
+                    VerticalAlignment="Center"
+                    DockPanel.Dock="Right" 
+                    Click="Back" Cursor="Hand"
+                    Foreground="White" 
+                    Margin="0,0,25,0"/>
+                
 
                 <TextBlock
                         VerticalAlignment="Center"

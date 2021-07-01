@@ -25,6 +25,8 @@ namespace SQLClient
         public UserEdit()
         {
             InitializeComponent();
+            SQLClient.Cesieat.Instance.currentPage = "userEdit";
+
             user = SQLClient.Cesieat.Instance.user;
             id.Text = user.Id.ToString();
             fName.Text = user.FirstName.ToString();

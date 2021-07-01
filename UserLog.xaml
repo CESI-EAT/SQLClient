@@ -8,14 +8,14 @@
       Title="UserLog" Height="600" Width="1000">
 
     <Grid>
-        <ListView Name ="lList" Margin="53,59,197,24" Width="750" MaxHeight="450">
+        <ListView Name ="lList" HorizontalAlignment="Center" Width="950" MaxHeight="450">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="FirstName" Width="190" DisplayMemberBinding="{Binding User.FirstName}" />
-                    <GridViewColumn Header="LastName" Width="190" DisplayMemberBinding="{Binding User.LastName}" />
-                    <GridViewColumn Header="TimeStamp" Width="200" DisplayMemberBinding="{Binding TimeStamp}" />
-                    <GridViewColumn Header="type" Width="90" DisplayMemberBinding="{Binding type}" />
+                    <GridViewColumn Header="FirstName" Width="140" DisplayMemberBinding="{Binding User.FirstName}" />
+                    <GridViewColumn Header="LastName" Width="140" DisplayMemberBinding="{Binding User.LastName}" />
+                    <GridViewColumn Header="TimeStamp" Width="400" DisplayMemberBinding="{Binding TimeStamp}" />
+                    <GridViewColumn Header="type" Width="190" DisplayMemberBinding="{Binding type}" />
                 </GridView>
             </ListView.View>
             <ListView.ItemContainerStyle>
@@ -24,6 +24,5 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="832,0,0,491" Width="120" Click="Button_Click"/>
     </Grid>
 </Page>

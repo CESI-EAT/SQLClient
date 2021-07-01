@@ -33,7 +33,7 @@ namespace SQLClient
         public Connexion(Cesieat father)
         {
             InitializeComponent();
-            //this.dao = new DAO(this);
+            SQLClient.Cesieat.Instance.currentPage = "connexion";
 
             parent = father;
         }

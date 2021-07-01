@@ -26,7 +26,8 @@ namespace SQLClient
         public UserLog()
         {
             InitializeComponent();
-            
+            SQLClient.Cesieat.Instance.currentPage = "userLog";
+
             foreach (Database.Log log in Database.DAO.GetLogList(SQLClient.Cesieat.Instance.connectionString)){
                 if (log.User.Id == SQLClient.Cesieat.Instance.user.Id)
                 {

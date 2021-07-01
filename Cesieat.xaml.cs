@@ -16,6 +16,7 @@ namespace SQLClient
         public string userType { get; set; }
         public Database.User user { get; set; }
         public Database.Log log { get; set; }
+        public string currentPage { get; set; }
 
         public static Cesieat Instance { get; private set; }
 
@@ -42,9 +43,34 @@ namespace SQLClient
             ContentPage.Source = new Uri(newFrame, UriKind.Relative);
         }
 
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            if (currentPage == "userList")
+            {
+                ContentPage.Source = new Uri("Connexion.xaml", UriKind.Relative);
+            }
+            else if (currentPage == "userEdit")
+            {
+                ContentPage.Source = new Uri("UserList.xaml", UriKind.Relative);
+            }
+            else if (currentPage == "userLog")
+            {
+                ContentPage.Source = new Uri("UserList.xaml", UriKind.Relative);
+            }
+            else if (currentPage == "logEdit")
+            {
+                ContentPage.Source = new Uri("UserLog.xaml", UriKind.Relative);
+            } else
+            {
+                Application.Current.Shutdown();
+            }
+
+        }
+
         private void Exit(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
     }   
 }

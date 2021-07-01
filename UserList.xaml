@@ -8,14 +8,14 @@
       Title="UserList" Height="600" Width="1000">
 
     <Grid>
-        <ListView Name ="uList" Margin="10,70,240,28" Width="750" MaxHeight="450">
+        <ListView Name ="uList" HorizontalAlignment="Center" Margin="0,25,0,0" Width="950" MaxHeight="450">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="FirstName" Width="100" DisplayMemberBinding="{Binding FirstName}" />
-                    <GridViewColumn Header="LastName" Width="100" DisplayMemberBinding="{Binding LastName}" />
-                    <GridViewColumn Header="Address" Width="240" DisplayMemberBinding="{Binding Address}" />
-                    <GridViewColumn Header="PhoneNum" Width="100" DisplayMemberBinding="{Binding PhoneNum}" />
+                    <GridViewColumn Header="FirstName" Width="140" DisplayMemberBinding="{Binding FirstName}" />
+                    <GridViewColumn Header="LastName" Width="140" DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Header="Address" Width="300" DisplayMemberBinding="{Binding Address}" />
+                    <GridViewColumn Header="PhoneNum" Width="130" DisplayMemberBinding="{Binding PhoneNum}" />
                     <GridViewColumn Header="Role" Width="150" DisplayMemberBinding="{Binding Role.Name}" />
                 </GridView>
             </ListView.View>
@@ -25,6 +25,5 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="816,0,0,452" Width="129" Click="Button_Click"/>
     </Grid>
 </Page>

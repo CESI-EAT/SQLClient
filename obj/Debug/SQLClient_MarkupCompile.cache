@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Benja\Dev\Cesi\SQLClient\obj\Debug\
+C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\obj\Debug\
 SQLClient
 none
 false
 DEBUG;TRACE
-C:\Users\Benja\Dev\Cesi\SQLClient\App.xaml
+C:\Users\Administrator\Desktop\sqlClient\cesieat-sqlclient\App.xaml
 61182630792
 
 121234732292
-31-367681040
+31-51255058
 Connexion.xaml;Cesieat.xaml;LogEdit.xaml;UserEdit.xaml;UserList.xaml;UserLog.xaml;
 
 False

@@ -32,8 +32,7 @@
                 <TextBox HorizontalAlignment="Left" TextAlignment="Center" Name="type" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
             </StackPanel>
         </StackPanel>
-        <Button Content="Save" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="802,0,0,296" Width="120" Click="Save_Click" Visibility="Visible" Cursor="Hand"/>
-        <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="802,0,0,258" Width="120" Click="Delete_Click" Cursor="Hand"/>
-        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="802,0,0,220" Width="120" Click="Button_Click" Cursor="Hand"/>
+        <Button Content="Save" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="765,0,0,282" Width="120" Click="Save_Click" Visibility="Visible" Cursor="Hand"/>
+        <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25" Margin="765,0,0,229" Width="120" Click="Delete_Click" Cursor="Hand"/>
     </Grid>
 </Page>
